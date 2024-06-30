@@ -1,18 +1,25 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
+
+// GET, POST , PUT, PATCH, DELETE (method http)
+
+Route::get('/',function(){
+    echo 'Trang chủ';
 });
+
+
+// Điều hướng qua action của controller
+// php artisan make:controller Tên Controller
+
+// Lab1
+Route::get('thongtinsv',[ProductController::class,'showProduct']);
+
+
+//Buổi 2
+
+Route::get('query-builder',[ProductController::class,
+'queryBuilder']);
